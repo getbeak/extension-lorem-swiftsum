@@ -27,8 +27,6 @@ const extension: EditableRealtimeValue<Payload, Payload> = {
 			paragraphs.push(paragraph.join('. '));
 		}
 
-		console.log(paragraphs);
-
 		return paragraphs.join('\n\n');
 	},
 
