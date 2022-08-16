@@ -1,18 +1,16 @@
-# Beak realtime value extension
+# @getbeak/extension-lorem-swiftsum
 
-**Note: The Beak Extensions API is still in an experimental phase, and so are the docs.**
+A Beak realtime value extension, that will generate Taylor Swift inspired lorem ipsum placeholder content.
 
-This is a template repo to help you get started building a Realtime Value extension for Beak.
-
-## About Beak
-
-Beak is a cross-platform API crafting tool that makes it easy to build and test API's across platforms and teams.
 
 ## Getting started
 
-- Clone this repo wherever you want
-- Make the whatever changes you want
-- Update the name of the extension in the `package.json`
-- Add this package as a dependency in the `extensions` folder of your Beak project
-- Run `yarn`
-- Restart Beak
+Install this npm package in your Beak project's extensions folder using yarn. You won't need to restart Beak as changes to extensions are picked up automatically.
+
+```
+$ yarn add @getbeak/extension-lorem-swiftsum
+```
+
+## More information?
+
+For more information check out the [Beak website](https://getbeak.app), or check the [Beak manual](https://docs.getbeak.app).
