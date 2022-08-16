@@ -1,8 +1,9 @@
 {
-  "name": "@getbeak/realtime-value-extensions-template",
+  "name": "@getbeak/extension-lorem-swiftsum",
   "version": "1.0.0",
   "main": "dist/index.js",
   "beakExtensionType": "realtime-value",
+  "private": false,
   "author": "Alexander Forbes-Reed <git@alex.forbes.red>",
   "license": "MIT",
   "type": "module",
@@ -10,7 +11,7 @@
     "esbuild": "^0.14.42",
     "typescript": "^4.6.4",
     "@getbeak/types": "1.0.0-prerelease.2",
-    "@getbeak/types-realtime-value": "1.0.0-prerelease.8"
+    "@getbeak/types-realtime-value": "1.0.0-prerelease.9"
   },
   "scripts": {
     "build": "esbuild src/index.ts --outfile=dist/index.js --bundle --target=node14 --minify --platform=node",

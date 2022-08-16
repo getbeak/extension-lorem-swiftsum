@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@getbeak/types-realtime-value@1.0.0-prerelease.8":
-  version "1.0.0-prerelease.8"
-  resolved "https://registry.yarnpkg.com/@getbeak/types-realtime-value/-/types-realtime-value-1.0.0-prerelease.8.tgz#770de8c9590bff8ea2f3a118bba6a5b4ae77e006"
-  integrity sha512-4VWiFxye42tsLY8z9SmBb6IZHpU7UEUW6tlFy4Xn9Xmd12KP+hKS1zeK2s/BteAUNkG7wklT2fKcwvSxRnapBw==
+"@getbeak/types-realtime-value@1.0.0-prerelease.9":
+  version "1.0.0-prerelease.9"
+  resolved "https://registry.yarnpkg.com/@getbeak/types-realtime-value/-/types-realtime-value-1.0.0-prerelease.9.tgz#9198a367bd26facd4729d2eda3c23f7fd81b669e"
+  integrity sha512-TEzOp+UJ1OdLupE/zGWVc8QkavRfeC+4NZ5YqJJ6u92Ug2AdcpWx2ioRPt6zFo26bGqJF5kYP6kCLEwD2r5wTQ==
   dependencies:
     "@getbeak/types" "1.0.0-prerelease.2"
 
