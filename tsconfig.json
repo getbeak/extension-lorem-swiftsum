@@ -3,6 +3,8 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ES2022",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   }
 }
