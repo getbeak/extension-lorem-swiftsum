@@ -1,40 +1,51 @@
-import type { ValueParts } from '@getbeak/types/values';
 import type { EditableRealtimeValue } from '@getbeak/types-realtime-value';
+import lyrics from './lyrics.json';
+
+const lyricCount = lyrics.length;
 
 interface Payload {
-	value: ValueParts;
+	paragraphs: number;
 }
 
 const extension: EditableRealtimeValue<Payload, Payload> = {
-	name: 'Square root',
-	description: 'Calculates the square root of a number.',
+	name: 'Lorem Swiftsum',
+	description: 'Generate some Lorem Ipsum style placeholder content, Taylor Swift inspired.',
 	sensitive: false,
-	attributes: {
-		requiresRequestId: false,
-	},
+	attributes: { requiresRequestId: false },
 
-	createDefaultPayload: async () => ({ value: [] }),
-	getValue: async (ctx, payload, recursiveSet) => {
-		// Use the BeakAPI to take the array of value parts, and parse them into a string
-		const parsed = await beakApi.parseValueParts(ctx, payload.value, recursiveSet);
+	createDefaultPayload: async () => ({ paragraphs: 1 }),
+	getValue: async (_ctx, payload) => {
+		const paragraphs: string[] = [];
 
-		// Take the parsed string and convert it to an integer
-		const integer = parseInt(parsed, 10) || 0;
+		for (let i = 0; i < payload.paragraphs; i++) {
+			const sentences = getRandomInteger(6, 11);
+			const paragraph: string[] = [];
 
-		// Calculate the square root
-		return Math.sqrt(integer).toString(10);
+			for (let j = 0; j < sentences; j++)
+				paragraph.push(lyrics[getRandomInteger(0, lyricCount)]);
+
+			paragraphs.push(paragraph.join('. '));
+		}
+
+		console.log(paragraphs);
+
+		return paragraphs.join('\n\n');
 	},
 
 	editor: {
 		createUserInterface: async () => [{
-			type: 'value_parts_input',
-			stateBinding: 'value',
-			label: 'What do you want to square root?',
+			type: 'number_input',
+			stateBinding: 'paragraphs',
+			label: 'How many paragraphs do you want to generate?',
 		}],
 
 		load: async (_ctx, payload) => payload,
 		save: async (_ctx, _existingPayload, state) => state,
 	},
 };
+
+function getRandomInteger(inclusiveMin: number, exclusiveMax: number) {
+	return Math.floor(Math.random() * (exclusiveMax - inclusiveMin) + inclusiveMin);
+}
 
 export default extension;
